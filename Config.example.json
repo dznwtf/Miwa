@@ -1,0 +1,4 @@
+{
+ "BotToken": "",    //Coloque o token do seu bot dentro das aspas
+ "MongoURL": ""   // Sua DB MongoURL
+}

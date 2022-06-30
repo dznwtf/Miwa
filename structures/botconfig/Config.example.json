@@ -1,0 +1,34 @@
+{
+    "env": {
+        "TOKEN": "", // Token do bot
+        "PREFIX": "", // Prefix (não tem comandos usando prefixo haha)
+        "MongoDB_TOKEN": "", // Sua MONGOURL 
+        "INVITE": "", // LINK DE INVITE DO SEU BOT
+        "WEBSITE": "", // SITE DO SEU BOT
+        "google_API": "", // IGNORE
+        "google_Engine_id": "", // IGNORE
+        "spotify_clientID": "", // IGNORE
+        "spotify_clientSecret": "", // IGNORE 
+        "news_API": "", // IGNORE
+        "giphy_API": "" // IGNORE
+    },
+    "music": {
+        "musicRequestImage": "", // Só ignorar
+        "youtubeCookie": "" // Só ignorar
+    },
+    "botlogs": {
+        "inviteLogs": "", // Id do canal de invites 
+        "feedbackChannel": "", // Id do canal de feedbacks (nem lembro se eu fiz)
+        "bugChannel": "", // Id do canal de report bugs
+        "suggestionChannel": "", // Id do canal de sugestões
+        "commandLogsChannel": "", // Id do canal de logs de comandos
+        "errorLogsChannel": "" // Id do Canal de Logs de erro
+    },
+    "events": {
+        "Enable_debug": false // Recomendo deixar assim ;D
+    },
+    "ownerID": [""], // Seu ID
+    "SlashCommandsGlobal": true, // SlashCommand Em Todos Servidores = True, caso queira somente em um Servidor, coloque False
+    "SlashCommand_Server_id": "", // Id do Servidor que os slash serão atualizados primeiro 
+    "Enable_MongoDB": true //Mongo DB, sempre TRUE
+}

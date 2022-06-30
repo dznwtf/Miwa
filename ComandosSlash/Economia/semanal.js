@@ -1,0 +1,55 @@
+const Discord = require("discord.js");
+
+module.exports = {
+    name: "semanal",
+    description: "[💸 Economia] Pegue o seu semanal",
+    type: 'CHAT_INPUT',
+    run: async (client, interaction) => {
+     
+     let userdb = await client.userdb.findOne({
+         userID: interaction.user.id
+     })
+      
+     if(!userdb){
+         const newuser = new client.userdb({ userID: interaction.user.id })
+         await newuser.save();
+         
+         userdb = await client.userdb.findOne({ userID: interaction.user.id })
+     }
+      
+    if(Date.now() < userdb.cooldowns.semanal){
+      const calc = userdb.cooldowns.semanal - Date.now()
+      
+         return interaction.reply({embeds: [new Discord.MessageEmbed()
+    .setTitle(`<a:red_exclamacao:974042663336685618> | Calma ae Parceiro(a)...`)
+    .setColor("a5d7ff")
+    .setDescription(`Ainda falta ${ms(calc).hours}h ${ms(calc).minutes}m ${ms(calc).seconds}s para você pegar o semanal novamente.`)
+], ephemeral: true})
+     }  
+      
+      const dinheiro = Math.floor(Math.random() * 5000) + 24000
+
+     await client.userdb.updateOne({
+         userID: interaction.user.id
+     }, { $set: {
+         "economia.money": userdb.economia.money + dinheiro,
+         "cooldowns.semanal": Date.now() + 604800000
+     }
+     })
+     
+    interaction.reply({embeds: [new Discord.MessageEmbed()
+    .setTitle(`<:daily:975944791957319681> | Semanal Pego! `)
+    .setColor("a5d7ff")
+    .setDescription(`${interaction.user}, você pegou seu semanal e ganhou \`R$${dinheiro}\``)
+]})
+    }
+};
+
+function ms(ms) {
+  const seconds = ~~(ms/1000)
+  const minutes = ~~(seconds/60)
+  const hours = ~~(minutes/60)
+  const days = ~~(hours/168)
+
+  return { days, hours: hours%168, minutes: minutes%60, seconds: seconds%60 }
+}
