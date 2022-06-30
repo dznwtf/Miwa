@@ -1,4 +1,5 @@
-# Miwa, um bot de economia OPEN SOURCE
+# Miwa, um projeto de bot com o foco de economia que foi abandonado
+Espero que vocês gostem :)
 
 # Configurando
 Abre a pasta botconfig, renomeie "Config.example.json" para config.json
