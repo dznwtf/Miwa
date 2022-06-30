@@ -1,7 +1,7 @@
 # Miwa, um projeto de bot com o foco de economia que foi abandonado
 
 # Configurando
-Abre a pasta botconfig, renomeie "Config.example.json" para config.json
+Abre a pasta structures e depois botconfig, renomeie "Config.example.json" para config.json
 Faça o mesmo no outro Config.example.json
 
 # Instalação
